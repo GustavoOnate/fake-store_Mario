@@ -256,3 +256,25 @@ footer {
   padding: 20px;
   overflow-x: auto;
 }
+
+.category-filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;   
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 2px solid #2f5d50;
+  background: transparent;
+  color: #2f5d50;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  white-space: nowrap;
+}
