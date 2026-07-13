@@ -44,8 +44,19 @@ async function renderCatalog() {
     renderProductsGrid(productos)
   } catch (error) {
     console.error(error)
-    App.innerHTML = `<p class="state-message">Error al cargar la tienda.</p>`
-  }
+    App.innerHTML = `
+    <div class="flex flex-col items-center justify-center gap-4 py-20">
+      <div class="alert alert-error max-w-md">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>No se pudieron cargar los productos. Revisa tu conexión.</span>
+      </div>
+      <button onclick="location.reload()" class="btn btn-error btn-outline btn-sm">
+        Reintentar
+      </button>
+    </div>
+  `  }
 }
 
 function renderCart() {
