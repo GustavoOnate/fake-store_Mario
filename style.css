@@ -10,37 +10,6 @@ body {
   color: #1a1a1a;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 32px;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e2e2;
-}
-
-header .logo img {
-  border-radius: 50%;
-  display: block;
-}
-
-header nav ul {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-header nav a:hover {
-  color: #2f5d50;
-}
-
 /* ---------- Estados: cargando / error ---------- */
 
 .state-message {
