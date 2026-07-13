@@ -24,8 +24,12 @@ window.addEventListener("hashchange", router)
 window.addEventListener("DOMContentLoaded", router)
 
 async function renderCatalog() {
-  App.innerHTML = `<p class="state-message">Cargando productos y categorías...</p>`
-  
+  App.innerHTML = `
+  <div class="flex flex-col items-center justify-center gap-3 py-20">
+    <span class="loading loading-spinner loading-lg text-success"></span>
+    <p class="text-gray-500 text-sm">Cargando productos...</p>
+  </div>
+`  
   try {
     const [productos, categorias] = await Promise.all([
       getAllProducts(),
@@ -65,8 +69,11 @@ function renderFilters(categorias) {
     btn.addEventListener("click", async (e) => {
       const cat = e.target.dataset.category
       const productsContainer = document.querySelector("#products-container")
-      productsContainer.innerHTML = `<p class="state-message">Cargando ${cat}...</p>`
-      
+      productsContainer.innerHTML = `
+      <div class="flex items-center justify-center py-16">
+        <span class="loading loading-spinner loading-lg text-success"></span>
+      </div>
+    `      
       const products = cat === "all" ? await getAllProducts() : await getProductsByCategory(cat)
       renderProductsGrid(products)
     })
